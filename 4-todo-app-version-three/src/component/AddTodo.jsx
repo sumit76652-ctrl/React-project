@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { IoBagAddOutline } from "react-icons/io5";
+
 
 function AddTodo({onNewItem}){
 
-  const [todoName, setTodoName] = useState();
+  const [todoName, setTodoName] = useState("");
 
-  const [dueDate, setdueDate] = useState();
+  const [dueDate, setdueDate] = useState("");
 
   const handleNameChange = (event) => {
     setTodoName(event.target.value);
@@ -32,7 +34,9 @@ function AddTodo({onNewItem}){
             <input type="date" value = {dueDate}  onChange = {handleDateChange}/>
             </div>
           <div className="col-2">
-            <button type="button" className="btn btn-success kg-button" onClick ={ handleAddButtonClicked}>Add</button>
+            <button type="button" className="btn btn-success kg-button" onClick ={ handleAddButtonClicked}>
+              < IoBagAddOutline />
+         </button>
 
           </div>
         </div>
